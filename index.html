@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Academy</title>
+    <link rel="icon" type="image/x-icon" href="https://www.example.com/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ecf0f1;
+            overflow-x: hidden;
+        }
+
+        /* Splash Screen Styles */
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #2c3e50;
+            z-index: 999;
+            overflow: hidden;
+        }
+
+        /* Ensure GIF covers entire screen */
+        .splash-screen img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  /* Ensures the image covers the full screen without distortion */
+        }
+
+        /* Animation for Splash Screen */
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        /* Main Content */
+        .main-content {
+            display: none;
+            padding: 50px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 50px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            animation: bounceIn 1s ease-in-out;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #7f8c8d;
+            animation: fadeInText 1.5s ease-in-out;
+        }
+
+        /* Animation for Header */
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Section for Academy Details */
+        .academy-details {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .academy-details h2 {
+            font-size: 30px;
+            color: #2980b9;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        .academy-details p {
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+        }
+
+        .academy-details .btn {
+            padding: 12px 30px;
+            font-size: 18px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .academy-details .btn:hover {
+            background-color: #3498db;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #34495e;
+            color: white;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 40px;
+            }
+
+            .academy-details h2 {
+                font-size: 24px;
+            }
+
+            .academy-details p {
+                font-size: 16px;
+            }
+        }
+</style>
+</head>
+<body>
+
+<!-- Splash Screen -->
+<div class="splash-screen">
+<img src="https://i.pinimg.com/736x/87/48/91/874891ad35151f818a3a9fe1fdd704b3.jpg" alt="Football Academy GIF">
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+<header>
+<h1>Welcome to Our Football Academy</h1>
+<p>Your Journey to Become a Football Star Starts Here!</p>
+</header>
+
+<section class="academy-details">
+<h2>About Our Academy</h2>
+<p>We offer world-class coaching programs designed for players of all ages and skill levels. Join us and improve your football game!</p>
+ <a href="https://www.instagram.com/ia_di8/?hl=ar" target="_blank">
+<button class="btn">Join Now</button>
+</section>
+
+<footer>
+<p>&copy; 2024 Football Academy. All Rights Reserved.</p>
+</footer>
+</div>
+
+    
+<script>     
+// Function to remove the splash screen and show the main content after GIF finishes
+window.onload = function() {
+setTimeout(function() {
+document.querySelector('.splash-screen').style.display = 'none';
+document.querySelector('.main-content').style.display = 'block';
+}, 4000); // Adjust the time to match the GIF duration
+};
+</script>
+</body>
+</html>
